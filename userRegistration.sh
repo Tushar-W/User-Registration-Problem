@@ -9,6 +9,7 @@ MOBILE_NO_PATTERN="^[0-9]{1,3}[ ][0-9]{10}$"
 PASSWORD_PATTERN="^[a-zA-Z]{8,}$"
 PASSWORD_PATTERN="^(?=.*[A-Z]).[a-zA-Z]{8,}$"
 PASSWORD_PATTERN="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+PASSWORD_PATTERN="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$"
 
 #check pattern is valid or not
 function checkPattern() {
