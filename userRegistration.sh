@@ -3,12 +3,12 @@ shopt -s extglob #turn on extended globbing
 
 echo "Welcome To User Registration Problem"
 #PATTERN
-pattern="^[A-Z]{1}[a-z]{3,}$"
+NAME_PATTERN="^[A-Z]{1}[a-z]{3,}$"
+EMAIL_PATTERN="^[0-9a-zA-Z]{1,}([._+-]{1}[a-zA-Z]+)?[@]{1}[0-9a-zA-Z]{1,}[.]{1}[a-z]{2,4}([.]{1}[a-z]{2})?$"
 
 #check pattern is valid or not
 function checkPattern() {
-	input=$1
-	if [[ $input =~ $pattern ]];
+	if [[ $1 =~ $2 ]];
 	then
 		echo "Valid"
 	else
@@ -17,6 +17,8 @@ function checkPattern() {
 }
 
 read -p "Enter First Name:" fName
-checkPattern fname
+checkPattern $fname $NAME_PATTERN
 read -p "Enter Last Name:" lName
-checkPattern lname
+checkPattern $lname $NAME_PATTERN
+read -p "Enter Email Address:" email
+checkPattern $email $EMAIL_PATTERN
