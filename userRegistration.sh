@@ -7,13 +7,16 @@ pattern="^[A-Z]{1}[a-z]{3,}$"
 
 #check pattern is valid or not
 function checkPattern() {
-	if [[ $fName =~ $pattern ]];
+	input=$1
+	if [[ $input =~ $pattern ]];
 	then
-		echo "First Name Is Valid"
+		echo "Valid"
 	else
-		echo "First Name Is Invalid"
+		echo "Invalid"
 	fi
 }
 
 read -p "Enter First Name:" fName
-checkPattern
+checkPattern fname
+read -p "Enter Last Name:" lName
+checkPattern lname
