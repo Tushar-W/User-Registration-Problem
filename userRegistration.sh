@@ -6,7 +6,8 @@ echo "Welcome To User Registration Problem"
 NAME_PATTERN="^[A-Z]{1}[a-z]{3,}$"
 EMAIL_PATTERN="^[0-9a-zA-Z]{1,}([._+-]{1}[a-zA-Z]+)?[@]{1}[0-9a-zA-Z]{1,}[.]{1}[a-z]{2,4}([.]{1}[a-z]{2})?$"
 MOBILE_NO_PATTERN="^[0-9]{1,3}[ ][0-9]{10}$"
-PASSWORD_PATTERN="^[a-zA-z]{8,}$"
+PASSWORD_PATTERN="^[a-zA-Z]{8,}$"
+PASSWORD_PATTERN="^(?=.*[A-Z]).[a-zA-Z]{8,}$"
 
 #check pattern is valid or not
 function checkPattern() {
