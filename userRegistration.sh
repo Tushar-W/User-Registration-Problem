@@ -5,22 +5,26 @@ echo "Welcome To User Registration Problem"
 #PATTERN
 NAME_PATTERN="^[A-Z]{1}[a-z]{3,}$"
 EMAIL_PATTERN="^[0-9a-zA-Z]{1,}([._+-]{1}[a-zA-Z]+)?[@]{1}[0-9a-zA-Z]{1,}[.]{1}[a-z]{2,4}([.]{1}[a-z]{2})?$"
-MOBILE_NO_PATTERN="^[0-9]{1,3}[ ][0-9]{10}$"
-PASSWORD_PATTERN="^[a-zA-Z]{8,}$"
+MOBILE_NO_PATTERN="^[0-9]{1,3}[ ][6-9]{1}[0-9]{9}$"
+PASSWORD_PATTERN="^[a-zA-Z0-9]{8,}$"
+PASSWORD_PATTERN="^(?=.*[A-Z])[a-zA-Z0-9]{8,}$"
+PASSWORD_PATTERN="^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$"
+PASSWORD_PATTERN="^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-zA-Z0-9]{8,})[a-zA-Z0-9]{1,}[@#!$%^&*()_-]{1}[a-zA-Z0-9]{1,}$"
+
 #check pattern is valid or not
 function checkPattern() {
 	if [[ $1 =~ $2 ]];
 	then
-		echo "Valid"
+		echo "$1 Is Valid"
 	else
-		echo "Invalid"
+		echo "$1 Invalid"
 	fi
 }
 
 read -p "Enter First Name:" fName
-checkPattern $fname $NAME_PATTERN
+checkPattern $fName $NAME_PATTERN
 read -p "Enter Last Name:" lName
-checkPattern $lname $NAME_PATTERN
+checkPattern $lName $NAME_PATTERN
 read -p "Enter Email Address:" email
 checkPattern $email $EMAIL_PATTERN
 read -p "Enter Mobile Number:" mNumber
